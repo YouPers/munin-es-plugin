@@ -1,18 +1,22 @@
 {
   "name": "munin-es-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "small munin plugin to get stats out of elasticsearch",
   "main": "esResponseTimes.js",
   "scripts": {
     "test": "test"
   },
   "preferGlobal": "true",
-  "bin": { "muninEsPlugin": "esResponseTimes.js" },
+  "bin": {
+    "muninEsPlugin": "esResponseTimes.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/YouPers/munin-es-plugin.git"
   },
-  "engines": { "node": "*" },
+  "engines": {
+    "node": "*"
+  },
   "author": "Reto Blunschi <reto.blunschi@youpers.com> (http://www.youpers.com)",
   "license": "MIT",
   "bugs": {
