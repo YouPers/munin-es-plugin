@@ -3,7 +3,6 @@
 var program = require('commander');
 var _ = require('lodash');
 var request = require('request-json');
-var client = request.createClient('http://localhost:9200');
 var moment = require('moment-timezone');
 
 program
@@ -14,6 +13,23 @@ program
     //  .option('-b, --bbq', 'Add bbq sauce')
     //    .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
     .parse(process.argv);
+
+
+var username = process.env.ESUSER;
+var password = process.env.ESPW;
+
+var host = process.env.ESHOSTURL || 'http://localhost:9200';
+
+var client = request.createClient(host);
+if (username) {
+    client.setBasicAuth(username, password);
+}
+
+var hostname = process.argv[0].split('_')[1];
+
+if (!hostname) {
+    hostname = 'prod';
+}
 
 //var dbObjects = require(program.args[0]);
 //var locale = program.args[1];
@@ -48,7 +64,7 @@ var myQuery = {
                 "and": [
                     {
                         "term": {
-                            "hostname": "prod"
+                            "hostname": hostname
                         }
                     }, {
                         "term": {
