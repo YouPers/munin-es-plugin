@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/YouPers/munin-es-plugin.git"
   },
-  "author": "Reto Blunschi",
+  "author": "Reto Blunschi <reto.blunschi@youpers.com> (http://www.youpers.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/YouPers/munin-es-plugin/issues"
