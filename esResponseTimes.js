@@ -89,8 +89,8 @@ client.get(url, {json: myQuery}, function(err, res, body) {
        process.exit(1);
    }
 
-    console.log('50p ' + body.aggregations.responsetimeAvg['50.0'].toFixed(1));
-    console.log('75p ' + body.aggregations.responsetimeAvg['75.0'].toFixed(1));
-    console.log('95p ' + body.aggregations.responsetimeAvg['95.0'].toFixed(1));
-    console.log('99p ' + body.aggregations.responsetimeAvg['99.0'].toFixed(1));
+    console.log('50p.value ' + body.aggregations.responsetimeAvg['50.0'].toFixed(1));
+    console.log('75p.value ' + body.aggregations.responsetimeAvg['75.0'].toFixed(1));
+    console.log('95p.value ' + body.aggregations.responsetimeAvg['95.0'].toFixed(1));
+    console.log('99p.value ' + body.aggregations.responsetimeAvg['99.0'].toFixed(1));
 });
