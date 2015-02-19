@@ -1,0 +1,24 @@
+{
+  "name": "munin-es-plugin",
+  "version": "0.0.1",
+  "description": "small munin plugin to get stats out of elasticsearch",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YouPers/munin-es-plugin.git"
+  },
+  "author": "Reto Blunschi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YouPers/munin-es-plugin/issues"
+  },
+  "homepage": "https://github.com/YouPers/munin-es-plugin",
+  "dependencies": {
+    "commander": "^2.6.0",
+    "lodash": "^3.2.0",
+    "request-json": "^0.5.2"
+  }
+}
