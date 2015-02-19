@@ -3,7 +3,7 @@
 var program = require('commander');
 var _ = require('lodash');
 var request = require('request-json');
-var client = request.createClient('http://logserver.youpers.com');
+var client = request.createClient('http://localhost:9200');
 var moment = require('moment-timezone');
 
 program
@@ -82,8 +82,6 @@ var myQuery = {
         }
     }
 };
-
-client.setBasicAuth('youpers', 'loglog');
 
 var url = '/logstash-' + moment().format('YYYY.MM.DD') + '/_search?search_type=count';
 client.get(url, {json: myQuery}, function(err, res, body) {
