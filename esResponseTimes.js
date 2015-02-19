@@ -26,11 +26,14 @@ if (program.args[0] && program.args[0] ==='config') {
     "graph_scale no\n"+
     "graph_category responsetimes\n"+
     "graph_info Percentiles of responsetimes on healthcampaign backend\n"+
-    "graph_order 50p 75p 95p 99p\n"+
     "50p.label 50% below this\n"+
     "75p.label 75% below this\n"+
     "95p.label 95% below this\n"+
-    "99p.label 99% below this\n"
+    "99p.label 99% below this\n" +
+    "50p.info 50% of all request had a response time lower than this value\n" +
+    "75p.info 75% of all request had a response time lower than this value\n" +
+    "95p.info 95% of all request had a response time lower than this value\n" +
+    "99p.info 99% of all request had a response time lower than this value\n"
     );
     process.exit(0);
 }
