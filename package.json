@@ -2,7 +2,7 @@
   "name": "munin-es-plugin",
   "version": "0.0.1",
   "description": "small munin plugin to get stats out of elasticsearch",
-  "main": "index.js",
+  "main": "esResponseTimes.js",
   "scripts": {
     "test": "test"
   },
@@ -19,6 +19,7 @@
   "dependencies": {
     "commander": "^2.6.0",
     "lodash": "^3.2.0",
+    "moment-timezone": "^0.3.0",
     "request-json": "^0.5.2"
   }
 }
