@@ -25,7 +25,7 @@ if (username) {
     client.setBasicAuth(username, password);
 }
 
-var hostname = process.argv[0].split('_')[1];
+var hostname = process.argv[1].split('_')[1];
 
 if (!hostname) {
     hostname = 'prod';
