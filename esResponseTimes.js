@@ -37,11 +37,11 @@ if (!hostname) {
 
 if (program.args[0] && program.args[0] ==='config') {
     console.log(
-    "graph_title Youpers HealthCampaign Backend ResponseTime\n"+
+    "graph_title "+ hostname +" Backend ResponseTime\n"+
     "graph_vlabel milliseconds\n"+
     "graph_scale no\n"+
     "graph_category responsetimes\n"+
-    "graph_info Percentiles of responsetimes on healthcampaign backend\n"+
+    "graph_info Percentiles of responsetimes on "+hostname+" backend\n"+
     "50p.label 50% below this\n"+
     "75p.label 75% below this\n"+
     "95p.label 95% below this\n"+
