@@ -6,6 +6,7 @@
   "scripts": {
     "test": "test"
   },
+  "preferGlobal": "true",
   "bin": { "muninEsPlugin": "esResponseTimes.js" },
   "repository": {
     "type": "git",
