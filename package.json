@@ -6,11 +6,12 @@
   "scripts": {
     "test": "test"
   },
-  "bin": { "munin-es-plugin": "esResponseTimes.js" },
+  "bin": { "muninEsPlugin": "esResponseTimes.js" },
   "repository": {
     "type": "git",
     "url": "https://github.com/YouPers/munin-es-plugin.git"
   },
+  "engines": { "node": "*" },
   "author": "Reto Blunschi <reto.blunschi@youpers.com> (http://www.youpers.com)",
   "license": "MIT",
   "bugs": {
