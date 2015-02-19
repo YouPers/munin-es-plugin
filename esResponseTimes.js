@@ -26,10 +26,7 @@ if (program.args[0] && program.args[0] ==='config') {
     "graph_scale no\n"+
     "graph_category responsetimes\n"+
     "graph_info Percentiles of responsetimes on healthcampaign backend\n"+
-    "graph_order 1p 5p 25p 50p 75p 95p 99p\n"+
-    "1p.label 1% below this \n"+
-    "5p.label 5% below this\n"+
-    "25p.label 25% below this\n"+
+    "graph_order 50p 75p 95p 99p\n"+
     "50p.label 50% below this\n"+
     "75p.label 75% below this\n"+
     "95p.label 95% below this\n"+
@@ -92,11 +89,8 @@ client.get(url, {json: myQuery}, function(err, res, body) {
        process.exit(1);
    }
 
-    console.log('1p ' + body.aggregations.responsetimeAvg['1.0']);
-    console.log('5p ' + body.aggregations.responsetimeAvg['5.0']);
-    console.log('25p ' + body.aggregations.responsetimeAvg['25.0']);
-    console.log('50p ' + body.aggregations.responsetimeAvg['50.0']);
-    console.log('75p ' + body.aggregations.responsetimeAvg['75.0']);
-    console.log('95p ' + body.aggregations.responsetimeAvg['95.0']);
-    console.log('99p ' + body.aggregations.responsetimeAvg['99.0']);
+    console.log('50p ' + body.aggregations.responsetimeAvg['50.0'].toFixed(1));
+    console.log('75p ' + body.aggregations.responsetimeAvg['75.0'].toFixed(1));
+    console.log('95p ' + body.aggregations.responsetimeAvg['95.0'].toFixed(1));
+    console.log('99p ' + body.aggregations.responsetimeAvg['99.0'].toFixed(1));
 });
