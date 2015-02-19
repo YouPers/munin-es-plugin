@@ -99,6 +99,16 @@ var myQuery = {
     }
 };
 
+function formatValue(val) {
+    if (val === 'NaN') {
+        return 0;
+    } else if (_.isString(val)) {
+        return parseFloat(val);
+    } else {
+        return val;
+    }
+}
+
 var url = '/logstash-' + moment().format('YYYY.MM.DD') + '/_search?search_type=count';
 client.get(url, {json: myQuery}, function(err, res, body) {
    if (err) {
@@ -106,8 +116,8 @@ client.get(url, {json: myQuery}, function(err, res, body) {
        process.exit(1);
    }
 
-    console.log('50p.value ' + body.aggregations.responsetimeAvg['50.0'].toFixed(1));
-    console.log('75p.value ' + body.aggregations.responsetimeAvg['75.0'].toFixed(1));
-    console.log('95p.value ' + body.aggregations.responsetimeAvg['95.0'].toFixed(1));
-    console.log('99p.value ' + body.aggregations.responsetimeAvg['99.0'].toFixed(1));
+    console.log('50p.value ' + formatValue(body.aggregations.responsetimeAvg['50.0']).toFixed(1));
+    console.log('75p.value ' + formatValue(body.aggregations.responsetimeAvg['75.0']).toFixed(1));
+    console.log('95p.value ' + formatValue(body.aggregations.responsetimeAvg['95.0']).toFixed(1));
+    console.log('99p.value ' + formatValue(body.aggregations.responsetimeAvg['99.0']).toFixed(1));
 });
