@@ -1,6 +1,6 @@
 {
   "name": "munin-es-plugin",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "small munin plugin to get stats out of elasticsearch",
   "main": "esResponseTimes.js",
   "scripts": {
