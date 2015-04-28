@@ -115,9 +115,8 @@ client.get(url, {json: myQuery}, function(err, res, body) {
        console.log(err);
        process.exit(1);
    }
-
-    console.log('50p.value ' + formatValue(body.aggregations.responsetimeAvg['50.0']).toFixed(1));
-    console.log('75p.value ' + formatValue(body.aggregations.responsetimeAvg['75.0']).toFixed(1));
-    console.log('95p.value ' + formatValue(body.aggregations.responsetimeAvg['95.0']).toFixed(1));
-    console.log('99p.value ' + formatValue(body.aggregations.responsetimeAvg['99.0']).toFixed(1));
+    console.log('50p.value ' + formatValue(body.aggregations.responsetimeAvg.values['50.0_as_string']));
+    console.log('75p.value ' + formatValue(body.aggregations.responsetimeAvg.values['75.0_as_string']));
+    console.log('95p.value ' + formatValue(body.aggregations.responsetimeAvg.values['95.0_as_string']));
+    console.log('99p.value ' + formatValue(body.aggregations.responsetimeAvg.values['99.0_as_string']));
 });
