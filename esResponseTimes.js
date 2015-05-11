@@ -99,7 +99,6 @@ var myQuery = {
 
 
 _.forEach(hostNameParts, function(part) {
-    console.error("part: " + part);
     myQuery.query.filtered.filter.and.push({
         "term": {
             "hostname": part
