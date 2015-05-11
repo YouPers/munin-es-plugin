@@ -31,6 +31,8 @@ if (!hostname) {
     hostname = 'prod';
 }
 
+var hostNameParts = hostname.split('-');
+
 //var dbObjects = require(program.args[0]);
 //var locale = program.args[1];
 //var objName = program.args[2];
@@ -64,10 +66,6 @@ var myQuery = {
                 "and": [
                     {
                         "term": {
-                            "hostname": hostname
-                        }
-                    }, {
-                        "term": {
                             "tags": "bunyan"
                         }
                     }, {
@@ -98,6 +96,16 @@ var myQuery = {
         }
     }
 };
+
+
+_.forEach(hostNameParts, function(part) {
+    console.error("part: " + part);
+    myQuery.query.filtered.filter.and.push({
+        "term": {
+            "hostname": part
+        }
+    })
+});
 
 function formatValue(val) {
     if (val === 'NaN') {
